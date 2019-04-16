@@ -1,5 +1,7 @@
 Artist.destroy_all
-
+Album.destroy_all
+Question.destroy_all
+# ARTISTS #
 metallica = Artist.create(name: "Metallica")
 iron_maiden = Artist.create(name: "Iron Maiden")
 deep_purple = Artist.create(name: "Deep Purple")
@@ -9,10 +11,10 @@ soundgarden = Artist.create(name: "Soundgarden")
 pantera = Artist.create(name: "Pantera")
 led_zeppelin = Artist.create(name: "Led Zeppelin")
 pink_floyd = Artist.create(name: "Pink Floyd")
-# korn = Artist.create(name: "Korn")
-# deftones = Artist.create(name: "Deftones")
+korn = Artist.create(name: "Korn")
+deftones = Artist.create(name: "Deftones")
 
-
+# ALBUMS #
 back_to_black = Album.create(title: "Back to Black", artist: metallica)
 black_album = Album.create(title: "Black Album", artist: metallica)
 master_of_puppets = Album.create(title: "Master of Puppets", artist: metallica)
@@ -40,3 +42,14 @@ wish_you_were_here = Album.create(title: "Wish You Were Here", artist: pink_floy
 animals = Album.create(title: "Animals", artist: pink_floyd)
 pulse = Album.create(title: "Pulse", artist: pink_floyd)
 the_wall = Album.create(title: "The Wall", artist: pink_floyd)
+follow_the_leader = Album.create(title: "Follow the Leader", artist: korn)
+issues = Album.create(title: "Issues", artist: korn)
+untouchables = Album.create(title: "Untouchables", artist: korn)
+white_pony = Album.create(title: "White Pony", artist: deftones)
+around_the_fur = Album.create(title: "Around the Fur", artist: deftones)
+diamond_eyes = Album.create(title: "Diamond Eyes", artist: deftones)
+
+
+# ALBUM_ID
+album_ids = Album.all.map {|album| album.id}
+album_ids.map { |id| Question.create(album_id: id) }

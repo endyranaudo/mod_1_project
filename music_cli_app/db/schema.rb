@@ -14,7 +14,7 @@ ActiveRecord::Schema.define(version: 2019_04_16_063157) do
 
   create_table "albums", force: :cascade do |t|
     t.string "title"
-    t.string "artist_id"
+    t.integer "artist_id"
   end
 
   create_table "artists", force: :cascade do |t|
@@ -23,6 +23,11 @@ ActiveRecord::Schema.define(version: 2019_04_16_063157) do
 
   create_table "questions", force: :cascade do |t|
     t.integer "album_id"
+  end
+
+  create_table "user_questions", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "question_id"
   end
 
   create_table "users", force: :cascade do |t|

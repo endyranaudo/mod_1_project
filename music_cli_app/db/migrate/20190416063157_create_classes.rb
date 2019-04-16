@@ -13,11 +13,16 @@ class CreateClasses < ActiveRecord::Migration[5.2]
     create_table :albums do |t|
       t.string :title
 
-      t.string :artist_id
+      t.integer :artist_id
     end
 
     create_table :questions do |t|
       t.integer :album_id
+    end
+
+    create_table :user_questions do |t|
+      t.integer :user_id
+      t.integer :question_id
     end
 
   end
