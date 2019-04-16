@@ -15,7 +15,6 @@ class CLI
     sleep(2.seconds)
   end
 
-
   def generate_question
     answered = UserQuestion.all.select{|uq| uq.user_id == @user.id}.map{|uq| uq.question}
     filtered = Question.all.select{|question| !answered.include?(question.id)}
@@ -46,8 +45,6 @@ class CLI
   end
 
 end
-
-
 
 ### extra methods --- start ---
 # def instructions
