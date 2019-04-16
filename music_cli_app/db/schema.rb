@@ -22,7 +22,6 @@ ActiveRecord::Schema.define(version: 2019_04_16_063157) do
   end
 
   create_table "questions", force: :cascade do |t|
-    t.integer "user_id"
     t.integer "album_id"
   end
 
