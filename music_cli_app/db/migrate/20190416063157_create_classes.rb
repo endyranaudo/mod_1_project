@@ -1,4 +1,4 @@
-class CreateTables < ActiveRecord::Migration[5.2]
+class CreateClasses < ActiveRecord::Migration[5.2]
 
   def change
     create_table :users do |t|
@@ -6,34 +6,25 @@ class CreateTables < ActiveRecord::Migration[5.2]
 
       t.integer :points, :default => 0
     end
-  end
 
-
-  def change
-    create_table :artist do |t|
+    create_table :artists do |t|
       t.string :name
 
       t.timestamps
     end
-  end
 
-  def change
-    create_table :album do |t|
+    create_table :albums do |t|
       t.string :title
       t.string :artist_id
 
       t.timestamps
     end
-  end
 
-
-  def change
-    create_table :question do |t|
+    create_table :questions do |t|
       t.integer :user_id
-      t.integer :question_id
+      t.integer :album_id
 
       t.timestamps
     end
   end
-
 end

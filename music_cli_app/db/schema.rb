@@ -12,11 +12,29 @@
 
 ActiveRecord::Schema.define(version: 2019_04_16_063157) do
 
-  create_table "question", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "question_id"
+  create_table "albums", force: :cascade do |t|
+    t.string "title"
+    t.string "artist_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "artists", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "questions", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "album_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "name"
+    t.integer "points", default: 0
   end
 
 end
