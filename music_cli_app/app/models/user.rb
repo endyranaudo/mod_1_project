@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
-  has_many :questions
-  has_many :artists, through: :questions
+  has_many :user_questions
+  has_many :questions, through: :user_questions
 
   validates :name, presence: true
 
