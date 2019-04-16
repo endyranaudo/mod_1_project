@@ -15,34 +15,6 @@ class CLI
     sleep(2.seconds)
   end
 
-
-  # def generate_question
-  #   album_ids = Album.all.map {|album| album.id}
-  #   binding.pry
-  #   album_ids.map { |id| Question.create(album_id: id) }
-  #   binding.pry
-  # end
-
-
-
-  def make_a_question
-    # @total_points = 0
-    # i = 0
-    # while i <= 5
-    # album = Album.random
-    right_answer = album.artist.name
-    user_answer = @prompt.ask( "Who wrote the album '#{album.title}'?")
-
-    if user_answer == right_answer
-      puts "You got it right! + 1 point!!"
-      @total_points +=1
-      i += 1
-    else
-      puts "Wrong answer! Sorry."
-      i += 1
-    end
-  end
-
   def generate_question
     answered = UserQuestion.all.select{|uq| uq.user_id == @user.id}.map{|uq| uq.question}
     filtered = Question.all.select{|question| !answered.include?(question.id)}
@@ -73,8 +45,6 @@ class CLI
   end
 
 end
-
-
 
 ### extra methods --- start ---
 # def instructions
