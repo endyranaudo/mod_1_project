@@ -12,11 +12,23 @@
 
 ActiveRecord::Schema.define(version: 2019_04_16_063157) do
 
-  create_table "question", force: :cascade do |t|
+  create_table "albums", force: :cascade do |t|
+    t.string "title"
+    t.string "artist_id"
+  end
+
+  create_table "artists", force: :cascade do |t|
+    t.string "name"
+  end
+
+  create_table "questions", force: :cascade do |t|
     t.integer "user_id"
-    t.integer "question_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer "album_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "name"
+    t.integer "points", default: 0
   end
 
 end
