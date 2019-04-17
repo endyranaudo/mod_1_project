@@ -12,49 +12,49 @@ class CLI
 
 
   def welcome
-    puts "Welcome, #{@user.name}. Ready to rock?"
+    puts "Welcome, #{@user.name}. Ready?"
     rock = "Rock"
     pop = "Pop"
     genre_selection = @prompt.select("Choose your genre", %w(Rock Pop))
     if genre_selection. == rock
       @genre = "Rock"
+      puts "\u{1F91F}" + " " + "\u{1F3B8}" + "  #####   GODS OF ROCK !!! #####  "
     else
       @genre = "Pop"
+      puts "\u{1F478}" + " " + "\u{1F3A4}" + "  #####   QUEENS OF POP !!! #####  "
     # sleep(2.seconds)
     end
   end
 
 
   def main_menu
-    # answer = @prompt.ask('Select "START" if you want to play a new game, "HELP" if you are not sure about how GOR™ works. "EXIT" to quit')
-    start = "start"
-    help = "help"
-    exit = "exit"
-    answer = @prompt.select('Select "START" if you want to play a new game, "HELP" if you are not sure about how GOR™ works. "EXIT" to quit', %w(start help exit))
-    # answer = @prompt.multi_select('Select "START" if you want to play a new game, "HELP" if you are not sure about how GOR™ works. "EXIT" to quit', choices, filter: true)
-    if answer == "start"
+    start = "START"
+    help = "HELP"
+    exit = "EXIT"
+    answer = @prompt.select('Select "START" if you want to play a new game, "HELP" if you are not sure about how MUSIC QUIZ™ works. "EXIT" to quit', %w(START HELP EXIT))
+    if answer == start
       find_or_create_user
-    elsif answer == "help"
+    elsif answer == help
       instructions
-    elsif answer == "exit"
+    elsif answer == exit
       goodbye
-      # sleep(2.seconds)
+      sleep(3.seconds)
     end
   end
 
-  
+
   def instructions
     puts
     puts "####### HELP #######"
-    puts "Trivial Rock is easy:"
-    # sleep(1.seconds)
-    puts "you have to answer to five simple questions."
-    # sleep(1.seconds)
+    puts "Music Quiz is easy to play!"
+    sleep(1.seconds)
+    puts "You have to answer to ten simple questions:"
+    sleep(1.seconds)
     puts "We will give a title of an album and you will need to guess who wrote it"
-    # sleep(1.seconds)
+    sleep(1.seconds)
     puts "If you guess the correct ansewer you earn ONE point!"
-    # sleep(2.seconds)
     puts "####################"
+    sleep(3.seconds)
     puts
     main_menu
   end
@@ -96,18 +96,20 @@ class CLI
     elsif @user.points >= 4 && @user.points <= 7
       puts "Not too bad, #{@user.name}! Your final score is #{@user.points} points!"
     else
-      puts "YOU ROCK, #{@user.name}!!! Your final score is #{@user.points} points!"
+      puts "YOU ARE A STAR, #{@user.name}!!! Your final score is #{@user.points} points!"
     end
   end
 
   def graphic_intro
     puts "-- WELCOME TO: --"
+    sleep(1.seconds)
     font = TTY::Font.new(:doom)
-    puts font.write("GODS  OF  ROCK")
+    puts font.write("MUSIC  QUIZ")
   end
 
   def run
     graphic_intro
+    sleep(2.seconds)
     main_menu
     welcome
     generate_question
