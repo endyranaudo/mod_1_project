@@ -20,7 +20,7 @@ deftones = Artist.create(name: "Deftones")
 
 
 # albums #
-back_to_black = Album.create(title: "Back to Black", artist: metallica, genre: "Rock")
+ride_the_lighting = Album.create(title: "Ride the Lightning", artist: metallica, genre: "Rock")
 black_album = Album.create(title: "Black Album", artist: metallica, genre: "Rock")
 master_of_puppets = Album.create(title: "Master of Puppets", artist: metallica, genre: "Rock")
 kill_em_all = Album.create(title: "Kill 'Em All", artist: metallica, genre: "Rock")
@@ -54,7 +54,7 @@ white_pony = Album.create(title: "White Pony", artist: deftones, genre: "Rock")
 around_the_fur = Album.create(title: "Around the Fur", artist: deftones, genre: "Rock")
 diamond_eyes = Album.create(title: "Diamond Eyes", artist: deftones, genre: "Rock")
 
-# ROCK #
+# POP #
 
 # artists #
 beyonce = Artist.create(name: "Beyoncé")
@@ -120,7 +120,7 @@ g3 = Album.create(title: "ArtPop", artist: gaga, genre: "Pop")
 g4 = Album.create(title: "Cheek to Cheek ", artist: gaga, genre: "Pop")
 g5 = Album.create(title: "Joanne", artist: gaga, genre: "Pop")
 
-#m1 = Album.create(title: "Madona", artist: madona, genre: "Pop")
+#m1 = Album.create(title: "Madonna", artist: madona, genre: "Pop")
 m2 = Album.create(title: "Like a Virgin", artist: madonna, genre: "Pop")
 m3 = Album.create(title: "True Blue", artist: madonna, genre: "Pop")
 m4 = Album.create(title: "Like a Prayer", artist: madonna, genre: "Pop")
