@@ -1,6 +1,7 @@
 Artist.destroy_all
 Album.destroy_all
 Question.destroy_all
+# UserQuestion.destroy_all
 # ARTISTS #
 metallica = Artist.create(name: "Metallica")
 iron_maiden = Artist.create(name: "Iron Maiden")
@@ -25,10 +26,10 @@ brave_new_world = Album.create(title: "Brave New World'", artist: iron_maiden)
 burn = Album.create(title: "Burn", artist: deep_purple)
 perfect_stanger = Album.create(title: "Perfect Stanger", artist: deep_purple)
 made_in_japan = Album.create(title: "Made in Japan", artist: deep_purple)
+in_rock = Album.create(title: "In Rock", artist: deep_purple)
 images_and_words = Album.create(title:"Images and Words", artist: dream_theater)
 awake = Album.create(title: "Awake", artist: dream_theater)
 six_degrees = Album.create(title:"Six Degrees of Inner Turbolence", artist: dream_theater)
-in_rock = Album.create(title: "In Rock", artist: dream_theater)
 in_utero = Album.create(title: "In Utero", artist: nirvana)
 bleach = Album.create(title: "Bleach", artist: nirvana)
 nevermind = Album.create(title: "Nevermind", artist: nirvana)
