@@ -30,12 +30,14 @@ class CLI
     if genre_selection. == rock
       @genre = "Rock"
       puts "\u{1F91F}" + " " + "\u{1F3B8}" + "  #####   " +  "GODS OF ROCK !!!".colorize(:color => :red) + " #####  "
+      # music
+      system 'afplay ./app/sounds/rock_instrumental.mp3 &'
     else
       @genre = "Pop"
       puts "\u{1F478}" + " " + "\u{1F3A4}" + "  #####   " + "QUEENS OF POP !!!".colorize(:color => :yellow) + " #####  "
+      system 'afplay ./app/sounds/pop_instrumental.mp3 &'
     end
   end
-
 
   def main_menu
     start = "START"
@@ -49,6 +51,7 @@ class CLI
     elsif answer == exit
       goodbye
       sleep(2.seconds)
+      system 'killall afplay'
     end
   end
 
@@ -116,6 +119,8 @@ class CLI
     else
     puts "See you soon!"
     end
+    # music
+    system 'killall afplay'
   end
 
 
@@ -137,6 +142,7 @@ class CLI
     welcome if @user
     generate_question if @user
     goodbye if @user
+    system 'killall afplay'
   end
 
 end
