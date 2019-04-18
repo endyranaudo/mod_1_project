@@ -132,8 +132,8 @@ class CLI
 
 
   def run
-    # graphic_intro
-    # sleep(2.seconds)
+    graphic_intro
+    sleep(2.seconds)
     main_menu
     welcome if @user
     generate_question if @user
