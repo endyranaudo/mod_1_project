@@ -70,8 +70,7 @@ class CLI
     main_menu
   end
 
-  # The filtered array s not being for all elements that refer tp the artist in right_answer.
-  # Only one of the elements is being deleted in line 73
+
   def generate_question
     @user.points = 0
     i = 0
@@ -104,7 +103,6 @@ class CLI
         i += 1
       end
     end
-
     @user.user_questions.destroy_all
     final_score
     puts ""
