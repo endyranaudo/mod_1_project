@@ -11,7 +11,7 @@ class CLI
     puts "-- WELCOME TO: --"
     puts ""
     sleep(1.seconds)
-    puts pastel.bright_white.on_green.bold(@font.write('MUSIC  QUIZ'))
+    puts pastel.bright_white.on_cyan.bold(@font.write('MUSIC  QUIZ'))
     puts ""
   end
 
@@ -23,7 +23,7 @@ class CLI
 
 
   def welcome
-    puts "Welcome, #{@user.name.colorize(:color => :yellow)}. Ready to play?"
+    puts "Welcome, #{@user.name.colorize(:color => :cyan)}. Ready to play?"
     rock = "Rock"
     pop = "Pop"
     genre_selection = @prompt.select("Choose your genre:", %w(Rock Pop))
@@ -62,7 +62,7 @@ class CLI
     sleep(1.seconds)
     puts "We will give a title of an album and you will need to guess who wrote it"
     sleep(1.seconds)
-    puts "If you guess the correct answer you earn" + " ONE point!".colorize(:color => :yellow)
+    puts "If you guess the correct answer you earn" + " ONE point".colorize(:color => :yellow) + "!"
     sleep(1.seconds)
     puts "####################".colorize(:color => :cyan)
     sleep(2.seconds)
@@ -100,14 +100,15 @@ class CLI
         @user.save
         i += 1
       else
-        puts "Wrong answer! Sorry."
+        puts "Wrong answer!".colorize(:color => :red) + " Sorry."
         i += 1
       end
     end
 
     @user.user_questions.destroy_all
     final_score
-    generate_question if @prompt.yes?("Would you like to play again?")
+    puts ""
+    generate_question if @prompt.yes?("Would you like to play again?".colorize(:color => :cyan))
   end
 
 
@@ -126,7 +127,7 @@ class CLI
     elsif @user.points >= 4 && @user.points <= 7
       puts "Not too bad, #{@user.name}! Your final score is #{@user.points.to_s.colorize(:color => :yellow)} " + "points".colorize(:color => :yellow) + "!"
     else
-      puts "YOU ARE A STAR, #{@user.name}!!! Your final score is #{@user.points.to_s.colorize(:color => :yellow)} " + "points".colorize(:color => :yellow) + "!"
+      puts "YOU ARE A STAR, #{@user.name.colorize(:color => :cyan)}!!! Your final score is #{@user.points.to_s.colorize(:color => :yellow)} " + "points".colorize(:color => :yellow) + "!"
     end
   end
 
