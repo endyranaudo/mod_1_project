@@ -74,7 +74,7 @@ be2 = Album.create(title: "B'Day", artist: beyonce, genre: "Pop")
 be3 = Album.create(title: "I Am... Sasha Fierce", artist: beyonce, genre: "Pop")
 be4 = Album.create(title: "4", artist: beyonce, genre: "Pop")
 #be5 = Album.create(title: "Beyoncé", artist: beyonce, genre: "Pop")
-be6 = Album.create(title: "Lemonade", artist: britney, genre: "Pop")
+be6 = Album.create(title: "Lemonade", artist: beyonce, genre: "Pop")
 
 br1 = Album.create(title: "...Baby One More Time", artist: britney, genre: "Pop")
 br2 = Album.create(title: "Oops!... I Did It Again", artist: britney, genre: "Pop")
