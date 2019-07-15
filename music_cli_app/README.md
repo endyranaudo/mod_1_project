@@ -1,4 +1,4 @@
-# mod_1_project
+# Music Quiz
 CLI app - Ruby
 
 User needs to guess the artist who wrote an album.
